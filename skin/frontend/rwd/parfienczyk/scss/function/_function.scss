@@ -1,0 +1,33 @@
+// Add percentage of white to a color
+@function tint($color, $percent){
+	@return mix(white, $color, $percent);
+}
+
+// Add percentage of black to a color
+@function shade($color, $percent){
+	@return mix(black, $color, $percent);
+}
+
+// =============================================
+// Function - Black
+// =============================================
+
+@function black ($opacity) {
+	@return rgba(0, 0, 0, $opacity);
+}
+
+@function black-fallback ($opacity) {
+	@return lighten(#000000, (1 - $opacity));
+}
+
+// =============================================
+// Function - White
+// =============================================
+
+@function white ($opacity) {
+	@return rgba(255, 255, 255, $opacity);
+}
+
+@function white-fallback ($opacity) {
+	@return darken(#FFFFFF, (1 - $opacity));
+}
