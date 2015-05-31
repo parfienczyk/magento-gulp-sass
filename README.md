@@ -10,7 +10,7 @@ Now compilation time is very fast - about ~5ms.
 * [SASS](http://sass-lang.com/)
 * [Gulp](http://gulpjs.com/)
 * [Node.JS](https://nodejs.org/)
-* [Magento 1.14](http://magento.com/)
+* [Magento 1.9](http://magento.com/)
 * [BrowserSync](http://browsersync.io/)
 
 
@@ -19,12 +19,12 @@ Now compilation time is very fast - about ~5ms.
 1) First install nodeJS dependencies `packages.json`
 
     npm install
-    
-2) Run Gulp + BrowserSync to watch changes and reload browsers 
-   
+
+2) Run Gulp + BrowserSync to watch changes and reload browsers
+
     gulp serve
-    
-     
+
+
 ### Usage / tasks ###
 
 * SASS (minify + uglify)
