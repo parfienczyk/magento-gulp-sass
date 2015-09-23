@@ -113,7 +113,7 @@ gulp.task('fonts', function() {
             'bower_components/bootstrap/fonts/**/*',
             'bower_components/font-awesome/fonts/**/*'
         ])
-        .pipe(gulp.dest('fonts'));
+        .pipe(gulp.dest(SKIN_DIR + '/fonts'));
 });
 
 // Optimize all images
