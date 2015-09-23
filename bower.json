@@ -1,0 +1,30 @@
+{
+  "name": "magento-gulp-sass",
+  "version": "0.0.1",
+  "homepage": "https://github.com/parfienczyk/magento-gulp-sass",
+  "authors": [
+    "Karol Parfienczyk <parfienczyk@gmail.com>"
+  ],
+  "description": "Front-end dependency tree, eg. Bootstrap, jQuery, etc.",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "magento",
+    "frontend",
+    "parfienczyk"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "font-awesome": "~4.4.0",
+    "jquery": "~2.1.4"
+  }
+}
