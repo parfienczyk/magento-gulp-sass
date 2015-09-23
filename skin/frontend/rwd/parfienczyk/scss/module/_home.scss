@@ -54,7 +54,7 @@ body.cms-home {
 .slideshow .banner-msg h2 {
     color: #FFFFFF;
     font-size: 24px;
-    @include single-text-shadow(1px, 1px, 3px, false, #555555);
+    text-shadow: 1px, 1px, 3px, false, #555555;
 }
 
 .slideshow .banner-msg h2 strong {
@@ -124,7 +124,7 @@ body .promos > li {
 }
 
 .promos a:hover {
-    @include opacity(0.8);
+    opacity: .8;
     display: block;
 }
 
@@ -138,7 +138,7 @@ body .promos > li {
     font-weight: 500;
     font-size: 20px;
     font-family: $f-stack-special;
-    @include single-text-shadow(1px, 1px, 3px, false, #555555);
+    text-shadow: 1px, 1px, 3px, false, #555555;
 }
 
 .promos strong {
