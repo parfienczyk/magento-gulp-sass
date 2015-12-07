@@ -19,17 +19,17 @@ Now compilation time is very fast - about ~5ms.
 
 1) First install nodeJS dependencies `packages.json`
 
-    $ npm install
+	npm install
     
 2) Install Bower dependency tree
     
-    $ npm install -g bower
+    npm install -g bower
     
-    $ bower install
+    bower install
 
 3) Run Gulp + BrowserSync to watch changes and reload browsers
 
-    $ gulp serve
+    gulp serve
 
 
 ### Usage / tasks ###
@@ -37,6 +37,14 @@ Now compilation time is very fast - about ~5ms.
 * SASS (minify + uglify)
 * JS (JShint + minify)
 * Images (optimization)
+
+
+## TODO:
+[ ] gulp-plugin-load
+[ ] fonts
+[ ] css optimize / Minify by csso
+[ ] stats 
+[ ] directory refactoring
 
 
 ### Author ###
