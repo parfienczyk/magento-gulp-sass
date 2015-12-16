@@ -80,23 +80,14 @@ gulp.task('js:custom', function () {
             //SKIN_DIR + '/src/js/example_file_2.js'
         ])
         .pipe($.plumber())
+        .pipe($.eslint())
+        .pipe($.eslint.format())
+        .pipe($.eslint.failAfterError())
         .pipe($.rename({suffix: '.min'}))
         .pipe($.uglify())
         .pipe($.size({showFiles: true}))
         .pipe(gulp.dest(SKIN_DIR + '/dist/js/'))
         .pipe(browserSync.reload({stream: true}));
-});
-
-
-// Configure the JShint task
-gulp.task('jshint', function () {
-    gulp.src([
-            SKIN_DIR + '/src/js/custom.js',
-            //SKIN_DIR + '/js/example_file_1.js'
-        ])
-        .pipe($.jshint())
-        .pipe($.jshint.reporter('default'))
-    ;
 });
 
 
@@ -132,7 +123,7 @@ gulp.task('watch', function () {
 });
 
 // Initialization
-gulp.task('js', ['jshint', 'js:custom', 'js:vendor']);
+gulp.task('js', ['js:custom', 'js:vendor']);
 gulp.task('dev', ['css', 'js']);
 gulp.task('prod', ['css', 'js', 'image', 'fonts']);
 

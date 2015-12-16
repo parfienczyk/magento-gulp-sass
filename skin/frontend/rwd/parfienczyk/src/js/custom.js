@@ -3,7 +3,7 @@
 
         var KPApp = {
             init: function () {
-                console.log('init');
+                console.log("init");
             }
         };
 

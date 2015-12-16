@@ -1,0 +1,12 @@
+{
+  "globals": {
+    "myModule": true
+  },
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "no-unused-vars": 1,
+    "quotes": 1
+  }
+}
