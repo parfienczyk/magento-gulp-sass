@@ -13,6 +13,7 @@ var HOST_URL = 'http://YOUR_LOCAL_VHOST.LINK/';   // e.g.: http://magento-store-
 // ======================================================
 var browserSync = require('browser-sync').create();
 var gulp = require('gulp');
+var sass = require('gulp-sass');
 var $ = require('gulp-load-plugins')();
 
 
@@ -38,17 +39,18 @@ gulp.task('serve', function () {
 //
 // CSS (SCSS + autoprefixer + minify)
 // ======================================================
-gulp.task('css', function () {
+gulp.task('styles', function () {
     gulp.src(SKIN_DIR + '/src/scss/**/*.scss')
         .pipe($.plumber())
-        .pipe($.sass.sync())
+        .pipe(sass.sync().on('error', sass.logError))
         .pipe($.autoprefixer({browsers: ['last 10 version']}))
         //.pipe($.sourcemaps.init())
-        .pipe($.minifyCss())
+        // .pipe($.csso())
+        .pipe($.cleanCss())
         //.pipe($.sourcemaps.write())
-        .pipe(browserSync.reload({stream: true}))
         .pipe($.size({showFiles: true}))
-        .pipe(gulp.dest(SKIN_DIR + '/dist/css'));
+        .pipe(gulp.dest(SKIN_DIR + '/dist/css'))
+        .pipe(browserSync.reload({stream: true}));
 });
 
 
@@ -57,8 +59,8 @@ gulp.task('css', function () {
 // ======================================================
 gulp.task('js:vendor', function () {
     var scripts = [
-        './bower_components/jquery/dist/js/jquery.min.js',
-        './bower_components/bootstrap/dist/js/bootstrap.min.js',
+        './node_modules/jquery/dist/js/jquery.min.js',
+        './node_modules/bootstrap/dist/js/bootstrap.min.js',
         //'src/js/script.js'
     ];
 
@@ -95,8 +97,8 @@ gulp.task('js:custom', function () {
 gulp.task('fonts', function () {
     gulp
         .src([
-            'bower_components/bootstrap/fonts/**/*',
-            'bower_components/font-awesome/fonts/**/*'
+            'node_modules/bootstrap/fonts/**/*',
+            'node_modules/font-awesome/fonts/**/*'
         ])
         .pipe(gulp.dest(SKIN_DIR + '/dist/fonts'));
 });
@@ -113,7 +115,7 @@ gulp.task('image', function () {
 gulp.task('watch', function () {
 
     // Watch .scss files
-    gulp.watch(SKIN_DIR + '/src/scss/**/*.scss', ['css']);
+    gulp.watch(SKIN_DIR + '/src/scss/**/*.scss', ['styles']);
 
     // Watch .js files
     gulp.watch(SKIN_DIR + '/src/js/*.js', ['js']);
@@ -124,8 +126,8 @@ gulp.task('watch', function () {
 
 // Initialization
 gulp.task('js', ['js:custom', 'js:vendor']);
-gulp.task('dev', ['css', 'js']);
-gulp.task('prod', ['css', 'js', 'image', 'fonts']);
+gulp.task('dev', ['styles', 'js']);
+gulp.task('prod', ['styles', 'js', 'image', 'fonts']);
 
 gulp.task('default', function () {
     console.log('To start using the package, use "$ gulp prod"');

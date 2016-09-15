@@ -12,20 +12,17 @@ Now compilation time is very fast - about ~5ms.
 * [Node.JS](https://nodejs.org/)
 * [Magento 1.9](http://magento.com/)
 * [BrowserSync](http://browsersync.io/)
-* [Bower](http://bower.io/)
-
 
 ### Installation ###
 
 1) First install nodeJS dependencies `packages.json`
 
 	npm install
-    
-2) Install Bower dependency tree
-    
-    npm install -g bower
-    
-    bower install
+
+2) Install dependencies by NPM
+
+    npm install bootstrap -S
+	npm install jquery -S
 
 3) Run Gulp + BrowserSync to watch changes and reload browsers
 
@@ -40,10 +37,9 @@ Now compilation time is very fast - about ~5ms.
 
 
 ## TODO:
-[ ] gulp-plugin-load
 [ ] fonts
 [ ] css optimize / Minify by csso
-[ ] stats 
+[ ] stats
 [ ] directory refactoring
 
 
