@@ -1,9 +1,9 @@
 (function ($) {
-    $(document).ready(function () {
+    $(document).ready(() => {
 
-        var KPApp = {
-            init: function () {
-                console.log("init");
+        let KPApp = {
+            init: () => {
+                console.log('init');
             }
         };
 

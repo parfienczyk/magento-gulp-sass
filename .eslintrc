@@ -1,12 +1,47 @@
 {
-  "globals": {
-    "myModule": true
+  "plugins": [],
+  "extends": ["eslint:recommended"],
+  "rules": {
+    "indent": [
+      1,
+      4,
+      { "SwitchCase": 1 }
+    ],
+    "quotes": [
+      2,
+      "single"
+    ],
+    "linebreak-style": [
+      2,
+      "unix"
+    ],
+    "semi": [
+      2,
+      "always"
+    ]
   },
   "env": {
-    "browser": true
+    "es6": true,
+    "browser": true,
+    "jasmine": true,
+    "mocha": true,
+    "amd": true
   },
-  "rules": {
-    "no-unused-vars": 1,
-    "quotes": 1
+  "ecmaFeatures": {
+    "modules": true
+  },
+  "globals" : {
+    "chai"       : false,
+    "describe"   : false,
+    "it"         : false,
+    "before"     : false,
+    "beforeEach" : false,
+    "after"      : false,
+    "afterEach"  : false,
+    "inject"     : false,
+    "jQuery"     : true,
+    "moment"     : true,
+    "$"          : true,
+    "_"          : true
   }
 }

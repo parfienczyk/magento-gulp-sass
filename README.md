@@ -1,4 +1,4 @@
-# Magento + RWD Template + SASS + GulpJS + BrowserSync #
+# ES6 | Magento + RWD Template + SASS + GulpJS + BrowserSync #
 
 This is default Magento RWD template with Gulp (Sass) without Compass.
 Now compilation time is very fast - about ~5ms.  
@@ -6,6 +6,7 @@ Now compilation time is very fast - about ~5ms.
 
 ### What is this? ###
 
+* ES6
 * Magento RWD Template  
 * [SASS](http://sass-lang.com/)
 * [Gulp](http://gulpjs.com/)
@@ -19,15 +20,16 @@ Now compilation time is very fast - about ~5ms.
 
 	npm install
 
-2) Install dependencies by NPM
+2) Install dependencies via NPM
 
     npm install bootstrap -S
 	npm install jquery -S
 
 3) Run Gulp + BrowserSync to watch changes and reload browsers
 
-    gulp serve
-
+    npm run prod 
+    
+    npm run dev
 
 ### Usage / tasks ###
 
@@ -35,12 +37,6 @@ Now compilation time is very fast - about ~5ms.
 * JS (JShint + minify)
 * Images (optimization)
 
-
-## TODO:
-[ ] fonts
-[ ] css optimize / Minify by csso
-[ ] stats
-[ ] directory refactoring
 
 
 ### Author ###
